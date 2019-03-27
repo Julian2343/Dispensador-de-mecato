@@ -1,7 +1,6 @@
 package co.julian.domain;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MaquinaDispensadora {
@@ -15,7 +14,8 @@ public class MaquinaDispensadora {
 		
 	}
 	
-	//retirar por nombre o codigo
+
+	//metodo para retirar producto por nombre o codigo
 	public void retirarProducto(String nombreOCodigoProducto) {
 		ArrayList<Producto> listaProductos = getProductos();
 		for (int i = 0; i <  listaProductos.size(); i++) {
@@ -26,28 +26,8 @@ public class MaquinaDispensadora {
 			}
 		}
 }
-	//retirar por nombre
-//	public void retirarProductoPorNombre(String nombreProducto) {
-//			ArrayList<Producto> listaNombres = getProducto();
-//			for (int i = 0; i <  listaNombres.size(); i++) {
-//				String nombres = listaNombres.get(i).getNombre();
-//				if (nombres == nombreProducto){
-//					listaNombres.get(i).removerProducto();
-//				}
-//			}
-//	}
-	//retirar por codigo
-//	public void retirarProductoPorCodigo(String codigoProducto) {
-//		ArrayList<Producto> listaCodigos = getProducto();
-//		for (int i = 0; i <  listaCodigos.size(); i++) {
-//			String codigos = listaCodigos.get(i).getCodigo();
-//			if (codigos == codigoProducto ){
-//				listaCodigos.get(i).removerProducto();
-//			}
-//		}
-//	}
 	
-	//consultar nombres de los productos agotados
+	//metodo para consultar nombres de los productos agotados
 	public ArrayList<String> consultarProductosAgotados() {
 		ArrayList<String> nombresProductosAgotados = new ArrayList<String>();
 		ArrayList<Producto> productos = getProductos();
@@ -61,10 +41,12 @@ public class MaquinaDispensadora {
 		return nombresProductosAgotados;
 	}
 	
+	//metodo para consultar el total de unidades de un producto en especifico
 	public int consultarTotalUnidadesDeProducto(Producto producto) {
 		return producto.getUnidadesProducto();
 	}
 	
+	//metodo para consultar el total de unidades de todos los productos
 	public int consultarTotalUnidadesTodosProductos() {
 		ArrayList<Producto> productos = getProductos();
 		int sumatoria = 0;
@@ -75,9 +57,11 @@ public class MaquinaDispensadora {
 		return sumatoria; 
 	}
 	
+	//metodo para aumentar la cantidad de un producto
 	public void aumentarCantidadUnidadesProducto(Producto producto, int cantidadAumentar) {
-		producto.aumentarProducto(cantidadAumentar);
+		producto.aumentarUnidadesProducto(cantidadAumentar);
 	}
+	
 	//getters y setters
 	public int getCantidadDeProductos() {
 		return cantidadDeProductos;

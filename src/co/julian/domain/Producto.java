@@ -4,7 +4,7 @@ public class Producto {
 	private String nombre;
 	private double precio;
 	private String codigo;
-	private int unidadesProducto = 12;
+	private int unidadesProducto;
 	
 	//constructor
 	public Producto(String nombre, int precio, String codigo, int unidadesProducto) {
@@ -12,6 +12,7 @@ public class Producto {
 		this.precio = precio;
 		this.codigo = codigo;
 		this.unidadesProducto = unidadesProducto;
+		
 	}
 	
 	//metodo remover producto
@@ -20,10 +21,21 @@ public class Producto {
 	}
 	
 	//metodo aumentar producto
-	public void aumentarProducto(int cantidadAAumentar) {
-		this.unidadesProducto = unidadesProducto + cantidadAAumentar;
+	public boolean aumentarUnidadesProducto(int cantidadAAumentar) {
+		if (unidadesProducto < 12) {
+			if (unidadesProducto + cantidadAAumentar > 12) {
+				return false;
+			}else {
+				this.unidadesProducto += cantidadAAumentar;
+				return true;
+			}
+		}else {
+			return true;
+		}
+		
 		
 	}
+	
 	//getters y setters
 	public double getPrecio() {
 		return precio;
