@@ -44,7 +44,7 @@ public class Main {
 		System.out.println("El total de unidades de " + jugo.getNombre() + " que hay son  " + maquina1.consultarTotalUnidadesDeProducto(jugo) + "\n");
 		
 		//consultar el total de unidades de todos los productos
-		System.out.println("El total de unidades de todos los productos es " + maquina1.consultarTotalUnidadesTodosProductos());
+		System.out.println("El total de unidades de todos los productos es " + maquina1.consultarTotalUnidadesTodosProductos() + "\n");
 
 		//aumentar producto con la condicion de que solo se pueden almacenar 12 productos
 		maquina1.aumentarCantidadUnidadesProducto(gomitas, 3);
